@@ -1,21 +1,28 @@
 package src.expressionNStatments;
 
+import java.util.Locale;
+
 public class Flow {
     public static void main(String[] args) {
-        int switchtest=17;
-        switch (switchtest){
-            case 1:
-                System.out.println("vale was 1");
+        int num = 400013;
+        primeNumber(num);
+
+
+    }
+
+    public static void primeNumber(int num) {
+        int temp = 0;
+        int j = 0;
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                j++;
                 break;
-            case 2:
-                System.out.println("value was 2");
-                break;
-            case 6:
-                System.out.println("value is 6");
-                break;
-            default:
-                System.out.println("enter valid number");
-                break;
+            }
         }
+        if (j % 2 != 0) {
+
+            System.out.println("Your number " + num + " is not a Prime Number");
+        } else
+            System.out.println("Your number " + num + " is  a Prime Number");
     }
 }
