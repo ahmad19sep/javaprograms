@@ -1,28 +1,21 @@
 package src.expressionNStatments;
 
-import java.util.Locale;
-
 public class Flow {
     public static void main(String[] args) {
-        int num = 400013;
-        primeNumber(num);
+        int sum=0;
+        int count=0;
+        for(int i=1; i<=1000; i++){
 
+            if (i%3==0&&i%5==0){
+                System.out.println("number is"+i);
+                sum =sum+i;
+                count++;
 
-    }
-
-    public static void primeNumber(int num) {
-        int temp = 0;
-        int j = 0;
-        for (int i = 2; i <= num / 2; i++) {
-            if (num % i == 0) {
-                j++;
-                break;
+                if(count==5){
+                    break;
+                }
             }
         }
-        if (j % 2 != 0) {
-
-            System.out.println("Your number " + num + " is not a Prime Number");
-        } else
-            System.out.println("Your number " + num + " is  a Prime Number");
+        System.out.println("Your sum of total five numbers is "+sum);
     }
 }
