@@ -2,24 +2,32 @@ package src.expressionNStatments;
 
 public class Flow {
     public static void main(String[] args) {
-        int num=70707;
-        System.out.println(isPalindrome(num));
-    }
-    public static boolean isPalindrome(int num){
-        int div=num;
-        int reverse=0;
-        while (div!=0){
+        int num = 3222222;
 
-            reverse=reverse+(div%10);
-            div=(div/10);
-            reverse=reverse*10;
-        }
-        reverse=reverse/10;
-
-        if(reverse==num){
-            return true;
-        }
-        return false;
+        System.out.println(num+" Sum of first and last integer is " + sumFandL(num));
     }
 
+    public static int sumFandL(int num) {
+        if (num < 9 && num >= 0) {
+            return num + num;
+        } else if (num > 9) {
+            int div = num;
+            int sum = 0;
+            int count = 0;
+            while (div != 0) {
+                sum = sum + (div % 10);
+                sum = sum * 10;
+                count++;
+                div = (div / 10);
+
+                if (div < 10 ) {
+                    sum = (int) (sum / (Math.pow(10, count)));
+                    sum = sum + (div % 10);
+                    return sum;
+                }
+
+            }
+        }
+        return -1;
+    }
 }
