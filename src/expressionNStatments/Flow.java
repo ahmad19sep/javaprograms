@@ -4,16 +4,18 @@ public class Flow {
     public static void main(String[] args) {
 int num=56668;
 int num1=24684;
-        System.out.println(getGreatestCommonDivisor(num,num1));
+        printFactor(num);
        }
-       public static int getGreatestCommonDivisor(int num,int num1){
-        if(num>10){
-            for(int i=num; i>=1; i--){
-                if(num%i==0 && num1%i==0){
-                    return i;
-                }
-            }
-        }
-        return -1;
+       public static void printFactor(int num){
+       if(num>1){
+           for (int i=1; i<=num; i++){
+               if(num%i==0){
+                   System.out.println(i+"\n");
+               }
+           }
+       }
+       else
+           System.out.println("invalid number");
+
        }
 }
