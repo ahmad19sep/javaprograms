@@ -5,28 +5,34 @@ import java.util.Scanner;
 
 public class Flow {
     public static void main(String[] args) {
-        int total=0;
-        Scanner getInput = new Scanner(System.in);
-        for(int i=1; i<=10; i++) {
+        Scanner scanner = new Scanner(System.in);
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("ENTER FIRST NUMBER TO COMPARE: ");
+        int max = scanner1.nextInt();
+        int min = max;
+        int ch = 0;
+        while (true) {
+            System.out.println("Enter number: ");
+            boolean hasnext = scanner.hasNextInt();
+            if (hasnext) {
 
-            System.out.println("Enter your"+i+"Number: ");
-            boolean hasInt= getInput.hasNextInt();
-            if(hasInt){
-            int number=getInput.nextInt();
-            getInput.nextLine();
+                int num = scanner.nextInt();
+                scanner.nextLine();
+                if (num > max) {
+                    max = num;
+                }
+                if (num < min) {
+                    min = num;
+                }
 
-                int sum=0;
-                sum +=number;
-
-                    total +=number;
-
-            }else {
+            } else {
                 System.out.println("invalid number");
-getInput.nextLine();
+                break;
             }
+
         }
-        System.out.println("Your sum is: "+total+" ");
-        getInput.close();
+        System.out.println("Maximum Number: " + max);
+        System.out.println("Minimum Number: " + min);
     }
 }
 
